@@ -129,7 +129,7 @@ body {
   --color3: var(--primary-text-color);
   --color5: var(--primary-text-color);
 
-  transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 
 .link:hover .icon,
@@ -351,10 +351,11 @@ body {
   padding-bottom: 94px;
 }
 
-.our-team-items > .item {
-  background-color: var(--primary-white-color);
+.our-team-item {
+  background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+
   border-radius: 0px 0px 4px 4px;
 }
 .our-team .picture {
@@ -408,6 +409,7 @@ body {
 .our-team-link .icon {
   --color1: #afb1b8;
   --color4: #afb1b8;
+  /* transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 
 .our-team-link:hover .icon,
@@ -454,6 +456,8 @@ body {
 
 .our-clients .icon {
   --color3: #afb1b8;
+
+  /* transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 
 .items-clients > .item:hover .icon,
