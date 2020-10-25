@@ -4,6 +4,8 @@
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --primary-white-color: #ffffff;
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 250ms;
 }
 
 html {
@@ -128,14 +130,14 @@ body {
   margin-right: 10px;
   --color3: var(--primary-text-color);
   --color5: var(--primary-text-color);
-
-  /* transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 
 .link:hover .icon,
 .link:focus .icon {
   --color3: var(--accent-color);
   --color5: var(--accent-color);
+  transition: --color3 var(--transition-duration) var(--time-function),
+    --color5 var(--transition-duration) var(--time-function);
 }
 
 .main-nav .item {
@@ -189,7 +191,7 @@ body {
 
 .link.contact {
   color: rgba(117, 117, 117, 1);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--time-function);
 }
 
 .link:hover,
@@ -245,8 +247,8 @@ body {
   font-weight: 700;
   line-height: 1.87;
   letter-spacing: 0.06em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--time-function),
+    background-color var(--transition-duration) var(--time-function);
 }
 
 .button-hero:hover,
@@ -343,6 +345,7 @@ body {
 /* our team */
 
 .our-team {
+  max-width: 100%;
   background: #f5f4fa;
 }
 
@@ -395,7 +398,7 @@ body {
 
   border-radius: 50%;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-duration) var(--time-function);
 }
 
 .social-links .link:hover,
@@ -409,13 +412,14 @@ body {
 .our-team-link .icon {
   --color1: #afb1b8;
   --color4: #afb1b8;
-  /* transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 
 .our-team-link:hover .icon,
 .our-team-link:focus .icon {
   --color1: #ffffff;
   --color4: #ffffff;
+
+  transition: var(--transition-duration) var(--time-function);
 }
 
 /* our clients */
@@ -446,7 +450,7 @@ body {
   border: 1px solid #afb1b8;
   border-radius: 4px;
 
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border var(--time-function) var(--time-function);
 }
 
 .items-clients .link:hover,
@@ -464,9 +468,15 @@ body {
 .items-clients > .item:focus .icon {
   --color3: var(--accent-color);
   --color4: var(--accent-color);
+  transition: --color3 var(--transition-duration) var(--time-function),
+    --color4 var(--transition-duration) var(--time-function);
 }
 
 /* footer */
+
+.footer {
+  max-width: 100%;
+}
 
 .footer .container {
   padding-top: 60px;
@@ -526,7 +536,7 @@ body {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-duration) var(--time-function);
 }
 
 .our-link-items .link:hover,
@@ -571,9 +581,9 @@ body {
   font-size: 16px;
   line-height: 1.62;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-duration) var(--time-function),
+    color var(--transition-duration) var(--time-function),
+    box-shadow var(--transition-duration) var(--time-function);
 }
 
 .button-filter:hover,
@@ -604,7 +614,7 @@ body {
   width: 370px;
   border: 1px solid #eeeeee;
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-duration) var(--time-function);
 }
 
 .projects .item:not(:nth-child(3n)) {
@@ -634,7 +644,7 @@ body {
   right: 0;
 
   transform: translateY(101%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--time-function) var(--transition-duration);
 
   padding-top: 63px;
   padding-right: 24px;
@@ -692,7 +702,7 @@ body {
   height: 100%;
   opacity: 1;
   background: rgba(0, 0, 0, 0.2);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--transition-duration) var(--time-function);
 }
 
 .backdrop.is-hidden {
@@ -711,7 +721,7 @@ body {
   background-color: var(--primary-white-color);
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-duration) var(--time-function);
 }
 
 .backdrop.is-hidden .modal {
@@ -727,8 +737,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
 
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
